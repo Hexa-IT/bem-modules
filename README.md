@@ -7,15 +7,15 @@
 You can install bem-modules using npm, yarn or pnpm:
 
 ```sh
-npm install bem-modules
+npm install @hexa-it/bem-modules
 ```
 
 ```sh
-yarn add bem-modules
+yarn add @hexa-it/bem-modules
 ```
 
 ```sh
-pnpm add bem-modules
+pnpm add @hexa-it/bem-modules
 ```
 
 ## Usage
@@ -23,7 +23,7 @@ pnpm add bem-modules
 To use `bem-modules` in your project, first import it into your JavaScript or TypeScript file:
 
 ```js
-import bem from "bem-modules";
+import bem from "@hexa-it/bem-modules";
 ```
 
 Then, assuming you have support for CSS Modules, create a stylesheet:
@@ -113,7 +113,7 @@ Usage with SASS, this will help keeping your stylesheets clean and concise
 ```tsx
 // Button.tsx
 
-import bem from "bem-modules";
+import bem from "@hexa-it/bem-modules";
 import styles from "./Button.module.scss";
 
 const cn = bem(styles);
@@ -145,7 +145,7 @@ export default function Button({
 ```tsx
 // page.tsx
 
-import bem from "bem-modules";
+import bem from "@hexa-it/bem-modules";
 import styles from "./Home.module.scss";
 
 const cn = bem(styles);
@@ -203,7 +203,7 @@ export default function Home({ children }: { children: ReactNode }) {
 
 ```jsx
 <script>
-	import bem from "bem-modules"
+	import bem from "@hexa-it/bem-modules"
 	import styles from "./styles.module.scss";
 
 	const cn = bem(styles);
@@ -220,15 +220,19 @@ export default function Home({ children }: { children: ReactNode }) {
 The `bem` function takes a `styles` object as its parameter and returns an object that contains a set of functions.
 
 ### Parameters
+
 - `styles` (required): A Styles object that defines the CSS modules for the BEM blocks, elements and modifiers.
 
 ### Return value
+
 An object that contains a set of functions. Each function can be used to generate BEM class names for the blocks, elements and modifiers defined in the `styles` object.
 
 The returned object is an object that contains the names of BEM blocks as its keys, and functions that can be used to generate BEM class names (`ElementFunction`) as its values.
 
 ### ElementFunction
+
 Each function takes two optional parameters:
+
 - `elementOrModifiers`: A string or an object that represents the BEM element or a set of modifiers for the block.
 - `modifiers`: An object that represents a set of modifiers for the element. If it is not provided, the function uses the modifiers from `elementOrModifiers`.
 
@@ -239,5 +243,3 @@ The function returns a string that represents the BEM class name for the specifi
 ### Throws
 
 If the name of a BEM block is not found in the styles object, the function throws an undefined error.
-
-
